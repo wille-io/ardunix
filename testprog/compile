@@ -1,0 +1,7 @@
+#!/bin/bash
+
+avr-gcc -Wall -mmcu=avr4 -c main.c -o main.o -O0 -I../adxsdk/include &&
+avr-gcc -Wall -mmcu=avr4 -O0 ../adxsdk/lib/libArdunixApi.o main.o -o main.elf &&
+avr-objcopy -I elf32-avr -O binary main.elf main.bin &&
+avr-objdump -D main.bin -b binary -m avr:6 > main.dump
+

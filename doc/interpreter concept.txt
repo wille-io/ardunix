@@ -1,0 +1,1 @@
+Interpreter > parseChar > active process (vm) ? > yes? redirect input to vm. no? redirect to interpreter.

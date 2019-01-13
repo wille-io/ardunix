@@ -1,0 +1,9 @@
+file getByte(50) > filesystem where is the file > first block of file @ pos 980 > 50 + 980 = 1030
+
+but what happens when..:
+
+blocksize = 128byte
+
+file getByte(200) > block of file @ pos 980 > 980 + 200 = 1180 > WOULD BE OUTSIDE OF THE FILE !!! because 200 > 128 byte (could be another file or free/old space
+
+so..: ask filesystem more explicit.. don't know how to ask this the fat16 fs... *learning now* I have to write my own fs now to fully understand how that exactly works

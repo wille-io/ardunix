@@ -1,0 +1,51 @@
+ardunix fs (adxfs)
+
+
+easy filesystem, not very space efficient, but very fast, easy to use (as everything in ardunix), easy to understand
+
+fixed device blocksize = 256 bytes (because normal sd cards read 256 bytes at once, this is most efficient) but there is a maximum of: Space of Card / 1 Block (8GB SD = 8GB block size)
+variable fs blocksize = 16 bytes recommended (16 bytes is optimum - 256 would be too big for arduino uno's small ram) maximum = as much as the targeted arduino has memory free
+
+so there is a total loss of 240 bytes each block! 8 GB sd card would have a theoretical space of only 512MB which is very very much for an arduino
+
+every file has a fixed length, which is: Space of Card / 255 (8GB / 255 = 32MB per file)
+a file MUST NOT exceed the maximum fixed length
+
+NOTE: a file is saved linear on the device, which means there is no fragmentation on the device (the benefit is lightning fast read/write and safety)
+
+
+header - contains information about this partition:
+block 0:
+	magic number: adxfs (0x61, 0x64, 0x78, 0x66, 0x73)  0 - 4
+	version: 1 byte (0 = standard)  5
+	blocksize: 2 byte (16 = standard) blocksize for this partition  6 - 7
+	
+block 1:
+	partition name: 16 bytes
+	
+	total size of header = 32 bytes (perfect, these are 2 blocks big)
+
+
+file information table - contains information about files and their (can store 255 files): (root entry not necessary)
+[in contrast to ntfs and fat32, etc., the fat can NOT contain small files inside itself]
+block 0:	
+	nodeID: 1 byte (id of file/directory/etc.)	
+	parentNodeID: 1 byte (id of parent directory it lays in. yes, it must be a directory, as files must not contain files)
+	
+block 1:
+	filename: 16 bytes ("MaximumFilename!")
+	
+	total size of 'fat': (1 + 30 + 1) * 255 = 8160 bytes
+		so a total size of 32 bytes per file information (perfect, these are 2 blocks big)
+
+
+file data table: (contains the actual file data)
+	raw data: Space of Card / 255 (8GB / 255 = 32MB per file) 
+
+
+
+
+
+
+
+
