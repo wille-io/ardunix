@@ -151,5 +151,5 @@ void API::Print(char* print) // prints the text in 'print' until 'length'
 		console->PrintLN(print); // print the string
 	//else
 		//?????
-	//delete print; // done, clean-up    NEVER EVER DO THIS, ARDUNIX HAS NOT THE SCOPE ON THE VIRTUAL SHIZ
+	//delete print; // done, clean-up    NEVER EVER DO THIS, ARDUNIX HAS NOT THE SCOPE ON THE VIRTUAL stuff
 }

@@ -17,8 +17,8 @@ class	CPU
 		ubyte2 PC;
 		ubyte1 gpwr [32];
 		ubyte1 sreg;
-		ubyte1 sram [0x08FF]; //  fucking stackpointer points to 0x08FF (which is 2303)         96]; // FOR IO TEST !  IO start @ 32 bytes, IO length 64 bytes
-		// a solution to avoid assembler - first byte to determine api type (cmd) and the second byte which points to the sram location where the coherant value is stored
+		ubyte1 sram [0x08FF]; //  mean stackpointer points to 0x08FF (which is 2303)         96]; // FOR IO TEST !  IO start @ 32 bytes, IO length 64 bytes
+		// a solution to avoid assembly - first byte to determine api type (cmd) and the second byte which points to the sram location where the coherant value is stored
 		// operation: note that the api-array comes directly after the sram-array - so sram[96] & sram[97] are on api[0] and api[1] !
 		//ubyte1 api[3]; // due to an error i made in STD_Z, api has to be 3, check for 2 and 3 if val > 0
 		ubyte1 api_cmd; // 2.303

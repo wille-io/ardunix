@@ -13,7 +13,7 @@ class VFIManager // virtual file index manager
 
 		void addChildren(VFI* source, VFI* destination); // insert a children into a parent [THIS IS THE NEW CHILDREN LIST STUFF!!]
 		VFI* newVFI(ubyte1 dev_id, char* node_name, ubyte1 fileType, ubyte1 fileSystemType, VFI* parent, int lba = 0); // insert a NEW children into a parent
-		VFI* parsePath(char* path, VFI* wdir); // returns the index of the given path (can be a file or directory) PLEASE do not feed with bullshit or else...!
+		VFI* parsePath(char* path, VFI* wdir); // returns the index of the given path (can be a file or directory) - very picky!
 		List<VFI*>* getListOfNode(VFI* vfi);
 		ubyte1 getChildrenNumOfVFI(VFI* vfi); // refresh the children list
 		String getNonVFIPathOfNode(VFI* index);

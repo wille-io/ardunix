@@ -169,7 +169,7 @@ void List<T>::deleteEntry(T ptr) // delete a node by its member "ptr"-pointer
   
   while (temp)
   {
-    if (temp == this->firstNode && temp->ptr == ptr) // check if the current node is the first node AND IF THE POINTER FITS TO TEMP'S POINTER!!! mike u dumb b*tch!!
+    if (temp == this->firstNode && temp->ptr == ptr) // check if the current node is the first node AND IF THE POINTER FITS TO TEMP'S POINTER! 
     {
       //std::cerr << "[firstNode] delted a entry! ptr = " << ptr << std::endl;
       firstNode = firstNode->link; // set firstNode's link-node to the new first node

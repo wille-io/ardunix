@@ -70,7 +70,7 @@ bool File::openFile(VFI* file) // VFI keeps data of the requested file. which of
 	/* only for devices:
 	if (!this->rawBlockDeviceAccessor->getDeviceByType(this->file->deviceID))	// check wheter this file is a block device
 	{
-		this->rawBlockDeviceAccessor = 0; // device not found? delete rbda ! TODO: WHY DELETE?!??!! are you CRAZY? it's like you crank the door handle up only because someone forgot his keys once lol
+		this->rawBlockDeviceAccessor = 0; // device not found? delete rbda ! TODO: WHY DELETE? 
 		return false;
 	}
 
@@ -92,7 +92,7 @@ ubyte1 File::getByte(ubyte8 pos)
 	/* only for devices:
 	if (this->rawBlockDeviceAccessor)
 	{
-		// TODO: THIS WILL NEVER WORK !!! if pos runs out of the filesystem's block for the file, we read from unkown places... we have to ask the filesystem here where to read!!
+		// TODO: THIS WILL NEVER WORK ! if pos runs out of the filesystem's block for the file, we read from unkown places... we have to ask the filesystem here where to read!!
 		// SO DO NOT OPEN A FILE FROM A FILESYSTEM (for now)!
 		return this->rawBlockDeviceAccessor->getByte(file->deviceID, (pos + this->file->lba)); // relative position to eeprom file
 	}

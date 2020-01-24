@@ -49,7 +49,7 @@ void VMManager::addVirtualMachine(VirtualMachine *vm, ubyte1 stdIOVMID) // stdIO
 {
 	if (!this->virtualMachineList) // if there is no list, create it
 	{
-		this->virtualMachineList = new List<VMProcess*>(); // () NEEDED!!!!!!!!!!!!!
+		this->virtualMachineList = new List<VMProcess*>();
 	}
 
 	VMProcess* vmProcess = 0;

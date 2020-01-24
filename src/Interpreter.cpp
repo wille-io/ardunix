@@ -161,6 +161,7 @@ void Interpreter::execute()
 		}
 	}
 	else
+	// funny how I implemented this the worst way possible back in 2012:
 		if (!strcmp_P(new_statement, PSTR("ls"))) // list all files
 		{
 			if (this->console)

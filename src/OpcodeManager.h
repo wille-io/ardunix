@@ -52,7 +52,7 @@ class OpcodeManager
 		VirtualMachine* parentVM;
 
 		#define IO_REG_ADDR_BEGIN 128 //0x20 // start sddress of IO register in sram(@ ubyte1 32)
-		#define IO_REG_ADDR_END   IO_REG_ADDR_BEGIN + 64  //0x60 // 20h - 60h = fu**ing 64 BYTES!!! !!! 111  !!!!
+		#define IO_REG_ADDR_END   IO_REG_ADDR_BEGIN + 64  //0x60 // 20h - 60h = 64 BYTES!!
     
     #define k12b(opcode)    (opcode & OpcodeManager::oo_k12b)
     #define Rd5b(opcode)    (((opcode & OpcodeManager::oo_Rd5b) >> 4) & 0x1f)
@@ -190,7 +190,7 @@ class OpcodeManager
 		void opcodeSUBI(ubyte2 Rd, ubyte2 k);
 		void opcodeSWAP(ubyte2 Rd);
 		void opcodeCALL(ubyte2 k);
-		void opcodeJMP(ubyte2 arg1); // UBYTE 2 !!!!!!!!!!!!1111111111
+		void opcodeJMP(ubyte2 arg1); // UBYTE 2 !!
 		void opcodeLPM_Z_inc(ubyte2 Rd);
 
 		void opcodeSTD_X(ubyte2 arg1, ubyte2 arg2);

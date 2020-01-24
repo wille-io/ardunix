@@ -84,7 +84,7 @@ bool ArdunixFileSystemAccessor::validatePartition(VFI* vfi) // to validate that 
 
 /**
  * @brief ArdunixFileSystemAccessor::initPartition
- * @param vfi - ????????????????
+ * @param vfi - ???
  * @return
  */
 bool ArdunixFileSystemAccessor::initPartition(VFI* vfi) // validates and initializes the partition (initializes this classes attributes)
@@ -160,7 +160,7 @@ VFI* ArdunixFileSystemAccessor::getRootVFI(ubyte1 deviceID) // for initializers
 
 					if (!filenameChar)
 					{
-						//Serial.print("filenameChar = noep!");
+						//Serial.print("filenameChar not set!");
 						//Serial.println("pos = "); Serial.println((long)pos);
 						break;
 					}
@@ -190,7 +190,7 @@ VFI* ArdunixFileSystemAccessor::getRootVFI(ubyte1 deviceID) // for initializers
 				children->deviceID = deviceID;
 				children->fileSize = 0; // temp
 				children->fileSystemType = ardunix::filesystem::filesystemtype::adxFS;
-				children->fileType = ardunix::filesystem::filetype::file; // FUCK... I forgot to teach adxFS what files and directories are... temp!!
+				children->fileType = ardunix::filesystem::filetype::file; // I forgot to teach adxFS what files and directories are... temp!!
 				children->iNode = fitBlock; // as the iNode is the fitBlock
 				//Serial.print("fit block = "); Serial.println((long)fitBlock);
 				children->lba = 0; // don't care
@@ -218,7 +218,7 @@ List<VFI*>* ArdunixFileSystemAccessor::getChildrenListOfVFI(VFI* vfi) // get chi
 	List<VFI*>* childrenList = new List<VFI*>();
 
 	VFI* testVFI = new VFI;
-	testVFI->deviceID = vfi->deviceID; // take device ID from currentParent, as any child can only be on THAT device on which the parent is from, u no?
+	testVFI->deviceID = vfi->deviceID; // take device ID from currentParent, as any child can only be on THAT device on which the parent is from
 	testVFI->fileSize = 0;
 	testVFI->fileSystemType = ardunix::filesystem::filesystemtype::adxFS;
 	testVFI->fileType = ardunix::filesystem::filetype::file;

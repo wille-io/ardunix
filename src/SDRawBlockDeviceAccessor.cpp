@@ -15,7 +15,7 @@ SDRawBlockDeviceAccessor::SDRawBlockDeviceAccessor() :
 
 
 
-	 pinMode(10, OUTPUT);     // "change this to 53 on a mega", doc. << bullshit! 10 works perfectly on the mega
+	 pinMode(10, OUTPUT);     // "change this to 53 on a mega", doc. << no! 10 works perfectly on the mega
 
 	this->_init(SPI_HALF_SPEED, 4); // SD_CHIP_SELECT_PIN);
 
@@ -28,7 +28,6 @@ SDRawBlockDeviceAccessor::SDRawBlockDeviceAccessor() :
 
 	this->readData(260, 0, 16, test);
 
-	Serial.print("ICH HABE GELESEN !! ");
 	Serial.println((char*)test);*/
 }
 

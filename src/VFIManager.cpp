@@ -104,7 +104,7 @@ String VFIManager::getPathOfNode(VFI* index)
 	return path;
 }
 
-VFI* VFIManager::parsePath(char* path, VFI* wdir) // returns the index of the given path (can be a file or directory) PLEASE do not feed with bullshit or else...!
+VFI* VFIManager::parsePath(char* path, VFI* wdir) // returns the index of the given path (can be a file or directory) - very picky !
 {
 	char* temp = 0;
 	char* new_path;

@@ -1,5 +1,5 @@
 # ardunix ftw
-# WARNING! DO NOT OPEN THIS FILE IN QTCREATOR OR ONLY IN READ-ONLY MODE !! As qtcreator CAN change text formatation, which makes make go totally apeshit
+# WARNING! DO NOT OPEN THIS FILE IN QTCREATOR OR ONLY IN READ-ONLY MODE !! As qtcreator CAN change text formatation, which makes make go totally nuts
 ARDUINO_DEV_PATH=C:/dev/Arduino/
 ARDUINO_PATH=$(ARDUINO_DEV_PATH)hardware/arduino/cores/arduino/
 CXX=avr-g++
@@ -46,7 +46,7 @@ install: $(BIN_PATH)ardunix
 # for Qt Creator
 run: install
 
-# -lc x2 = shitty workaround
+# -lc x2 = bad workaround
 $(BIN_PATH)ardunix: $(OBJECTS)
 	@$(AR) rcs $(BIN_PATH)ardunix.a $(OBJECTS)
 	@$(CXX) -Os -Wl,--gc-sections,--relax -mmcu=$(MCU) -o $(BIN_PATH)ardunix.elf $(BIN_PATH)ardunix.o $(BIN_PATH)ardunix.a $(LIBRARIES) -lc -lm -lc

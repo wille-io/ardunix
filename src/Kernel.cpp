@@ -55,7 +55,7 @@ void Kernel::handleEvent(ubyte1 eventType, void* ptr)
 #ifdef ARDUINO
 			asm volatile ("JMP 0"); // this opcode does not work on machines with windows operating system and similar
 #else
-			exit(0); // windows can not restart an application, so only quit program
+			exit(0); // too time consuming to restart an application layered on another os - so just exit
 #endif
 			return;
 	}

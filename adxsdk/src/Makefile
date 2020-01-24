@@ -1,5 +1,5 @@
 # compile ardunix sdk
-# WARNING! DO NOT OPEN THIS FILE IN QTCREATOR OR ONLY IN READ-ONLY MODE !! As qtcreator CAN change text formatation, which makes make go totally apeshit
+# WARNING! DO NOT OPEN THIS FILE IN QTCREATOR OR ONLY IN READ-ONLY MODE !! As qtcreator CAN change text formatation, which makes make go totally nuts
 
 CXX=avr-g++
 CC=avr-gcc

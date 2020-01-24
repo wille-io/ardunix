@@ -53,14 +53,14 @@ ubyte2 VirtualMachine::readWord(int pos) // TODO: short to int ?!
 {
   return this->file->getWord(pos);
   
-  //this->cpu->PC += 2; // ???? because we are working with 8 bit we have to increment PC ??????????? !!!!!!!!!!!!!!!!!!!!!!!!!
+  //this->cpu->PC += 2; // ???? because we are working with 8 bit we have to increment PC ?!
   
   //return conv.UBYTE2;
 }
 
 //#define call(x) Serial.print(F("avr_op_x")); opcodeManager.avr_op_x(operand1, operand2);
 
-void VirtualMachine::executeOpcode(ubyte2 opcode) // we do NOT create a opcode loopup table, because of extremly hard sram limitations
+void VirtualMachine::executeOpcode(ubyte2 opcode) // we do NOT create an opcode loopup table, because of extremly hard sram limitations
 {
 #ifdef DEBUG
   //Serial.print(F("\r\n"));
@@ -118,7 +118,7 @@ void VirtualMachine::executeOpcode(ubyte2 opcode) // we do NOT create a opcode l
       
       /*ubyte1* lookFor = (ubyte1*)&this->cpu;
         
-      // LOOK FOR 99, WHERE IS THAT FUCKR ?!
+      // LOOK FOR 99, WHERE IS he ?!
       for (ubyte2 i = 0; i < sizeof(CPU); i++)
       {
         if (lookFor[i] == 99)

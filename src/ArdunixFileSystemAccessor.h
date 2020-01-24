@@ -37,7 +37,7 @@ class ArdunixFileSystemAccessor : public AbstractFileSystemAccessor
 		VFI* getRootVFI(ubyte1 deviceID);
 		bool initPartition(VFI* vfi);
 
-	private: // TODO: other data types pl0x
+	private: // TODO: other data types, please
 		ubyte1 version;
 		ubyte2 devBlockSize; // standard = 256
 		ubyte8 fsBlockSize; // standard = 16

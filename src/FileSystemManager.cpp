@@ -80,7 +80,7 @@ VFI* FileSystemManager::getVFI(ubyte1 deviceID, VFI* parentVFI, char* nodeName) 
 
 
 
-	// VFI is not in childrenList, lookup. <<<<<<<<< THIS is no possible. if not in childrenlist, then it does not exist
+	// VFI is not in childrenList, lookup. << THIS is not possible. if not in childrenlist, then it does not exist
 	return 0; //ardunixFileSystemAccessor->getVFI(parentVFI, "testfile");
 
 
@@ -128,7 +128,7 @@ List<VFI*>* FileSystemManager::getListOfNonVFIPathOfNode(ubyte1 deviceID, char* 
 	 * was i drunk defining this method?
 
 	//                          13  >   1,3 -          13    >  1     > 0,3     3   (partition 3)
-	float partition = ((((float)deviceID) / 10) - ((byte)deviceID) / 10) * 10; // UGLY I am not an mathematican :B !!
+	float partition = ((((float)deviceID) / 10) - ((byte)deviceID) / 10) * 10; // UGLY, but the way easiest way to do it
 	//int partition_type_position = 446 + 4 + (partition * 16); // 446 = first partition info position > add 4 to get to partition type (1 byte)
 
 	// TODO: delete this debug line:
